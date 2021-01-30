@@ -1,0 +1,62 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %>!</p>
+<b>Role:</b> <%= user.role %>
+<p class="lead mb-3">Today is
+<script language="javascript">
+    var today = new Date();
+    document.write(today);
+    </script>
+</p>
+    <%if (user.role == 'Admin') { %>
+        <b>Only Admins can see this</b>
+        <ul>
+            <li><a href="https://auth0.com">Manage User Roles</a></li>
+            <li><a href="https://auth0.com">Assign Roles</a></li>
+            <li> <a href="https://www.servicenow.com">Help Desk</a></li>
+        </ul>
+        <% } %>
+
+    <%if (user.role  == 'Finance Admin') { %>
+        <b>Only Finance Admins can see this</b>
+        <ul>
+            <li><a href="https://www.mint.com">Finance Reports</a></li>
+            <li><a href="https://www.paypal.com">Accounts Payable</a></li>
+            <li><a href="https://www.paypal.com">Accounts Receivable</a></li>
+            <li><a href="https://turbotax.intuit.com">Tax</a></li>
+        </ul>
+        <% } %>
+    
+    <%if (user.role  == 'HR Admin') { %>
+        <b>Only HR Admins can see this</b>
+        <ul>
+            <li><a href="https://www.hrmanagementapp.com">New Hire On-boarding</a></li>
+            <li><a href="https://www.hrmanagementapp.com">Benefits</a></li>
+            <li><a href="https://www.paycom.com">Payroll</a></li>
+            <li><a href="https://www.hrmanagementapp.com">Off-boarding</a></li>
+            <li><a href="https://www.hrmanagementapp.com">HR Reports</a></li>
+        </ul>
+        <% } %>
+
+    <%if (user.role  == 'Tech Admin') { %>
+        <b>Only Tech Admin can see this</b>
+        <ul>
+            <li><a href="https://www.mongodb.com/analytics">Application Monitoring</a></li>
+            <li><a href="https://www.servicenow.com">Tech Support</a></li>
+            <li><a href="https://azure.microsoft.com/en-us/services/devops/">App Development</a></li>
+            <li><a href="https://auth0.com">App Admin</a></li>
+            <li><a href="https://azure.microsoft.com/en-us/services/devops/">Release Management</a></li>
+        </ul>
+        <% } %>
+
+    <%if (user.role  == 'Sales Admin') { %>
+        <b>Only Accounting Admin can see this</b>
+        <ul>
+            <li><a href="https://www.salesforce.com">Sales Reports</a></li>
+            <li><a href="https://www.salesforce.com">Sales Leads</a></li>
+            <li><a href="https://www.salesforce.com">Sales Demo</a></li>
+        </ul>
+        <% } %>
+
+
+
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
