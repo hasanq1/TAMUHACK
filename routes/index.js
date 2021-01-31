@@ -3,7 +3,7 @@ const router = express.Router();
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 // Welcome Page
-router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
+router.get('/', forwardAuthenticated, (req, res) => res.render('blog'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
@@ -19,5 +19,7 @@ router.get('/blog', ensureAuthenticated, (req, res) =>
     role: req.role
   })
 );
+
+
 
 module.exports = router;
