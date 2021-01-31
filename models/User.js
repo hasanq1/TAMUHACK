@@ -24,6 +24,28 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
+const UserPost = new mongoose.Schema({
+  Post: {
+    type: String,
+    required: true
+  },
+  Title: {
+    type: String,
+   },
+   Description: {
+    type: String,
+    required: true
+  },
+  Image: {
+    type: String,
+    required: true
+  },
+  Date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
 const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
