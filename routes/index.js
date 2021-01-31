@@ -19,7 +19,12 @@ router.get('/blog', ensureAuthenticated, (req, res) =>
     role: req.role
   })
 );
-
+router.get('/post', ensureAuthenticated, (req, res) =>
+    res.render('post', {
+        user: req.user,
+        role: req.role
+    })
+);
 
 
 module.exports = router;
